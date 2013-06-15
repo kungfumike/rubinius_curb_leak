@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'curb'
+
+request = Curl::Easy.new('http://localhost:4567/tweetstream')
+
+request.on_body do |segment|
+    segment.length
+end
+
+request.perform
