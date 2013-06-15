@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+fork do
+  `bundle exec ruby ./web.rb -s puma`
+end
+#give puma a sec to start up
+sleep 2
+
+['curb_example', 'net_http_example'].each do |bin_name|
+  fork do
+    `bundle exec ./#{bin_name}`
+  end
+end
+
+10000.times do |i|
+  puts `ps aux | grep ruby`
+  puts "#"*80
+  sleep 1
+end

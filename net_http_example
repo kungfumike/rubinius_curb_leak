@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'net/http'
+require 'uri'
+
+uri = URI('http://localhost:4567/stream')
+
+Net::HTTP.get_response(uri) do |response|
+    response.read_body do |segment|
+	segment.length
+    end
+end

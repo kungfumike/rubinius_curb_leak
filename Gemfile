@@ -1,5 +1,5 @@
 source :rubygems
 
 gem 'sinatra'
-gem 'thin'
+gem 'puma'
 gem 'curb'

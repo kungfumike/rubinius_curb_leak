@@ -2,7 +2,7 @@
 
 require 'curb'
 
-request = Curl::Easy.new('http://localhost:4567/tweetstream')
+request = Curl::Easy.new('http://localhost:4567/stream')
 
 request.on_body do |segment|
     segment.length

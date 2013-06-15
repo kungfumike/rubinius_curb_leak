@@ -1,1 +1,1 @@
-A project to invetigate a Rubinius/Curb memory leak
+A project to investigate a Rubinius/Curb memory leak
